@@ -1,0 +1,277 @@
+{
+  "author": "Плющик Вячеслав",
+  "seed": 42,
+  "split": {
+    "fit": 876,
+    "validation": 292,
+    "test": 292
+  },
+  "schema": {
+    "features": [
+      "OverallQual",
+      "GrLivArea",
+      "YearBuilt",
+      "GarageCars",
+      "TotalBsmtSF",
+      "FullBath",
+      "Neighborhood"
+    ],
+    "neighborhoods": [
+      "Blmngtn",
+      "Blueste",
+      "BrDale",
+      "BrkSide",
+      "ClearCr",
+      "CollgCr",
+      "Crawfor",
+      "Edwards",
+      "Gilbert",
+      "IDOTRR",
+      "MeadowV",
+      "Mitchel",
+      "NAmes",
+      "NPkVill",
+      "NWAmes",
+      "NoRidge",
+      "NridgHt",
+      "OldTown",
+      "SWISU",
+      "Sawyer",
+      "SawyerW",
+      "Somerst",
+      "StoneBr",
+      "Timber",
+      "Veenker"
+    ],
+    "default_neighborhood": "NAmes",
+    "numeric": {
+      "OverallQual": {
+        "min": 1,
+        "max": 10,
+        "default": 6
+      },
+      "GrLivArea": {
+        "min": 480,
+        "max": 4676,
+        "default": 1470
+      },
+      "YearBuilt": {
+        "min": 1875,
+        "max": 2009,
+        "default": 1973
+      },
+      "GarageCars": {
+        "min": 0,
+        "max": 4,
+        "default": 2
+      },
+      "TotalBsmtSF": {
+        "min": 0,
+        "max": 3206,
+        "default": 995
+      },
+      "FullBath": {
+        "min": 0,
+        "max": 3,
+        "default": 2
+      }
+    }
+  },
+  "selection": {
+    "basic": {
+      "fit_rows": 323,
+      "validation_rows": 107,
+      "choice": {
+        "model": "ridge",
+        "weight": 0.5,
+        "mae": 14112.107909914379
+      },
+      "candidates": [
+        {
+          "model": "base",
+          "weight": 0.0,
+          "mae": 14376.582716738243
+        },
+        {
+          "model": "ridge",
+          "weight": 0.5,
+          "mae": 14112.107909914379
+        },
+        {
+          "model": "ridge",
+          "weight": 1.0,
+          "mae": 14706.839662967328
+        },
+        {
+          "model": "gbr",
+          "weight": 0.5,
+          "mae": 14176.168548977605
+        },
+        {
+          "model": "gbr",
+          "weight": 1.0,
+          "mae": 14825.969876899884
+        },
+        {
+          "model": "hist",
+          "weight": 0.5,
+          "mae": 14658.532419132713
+        },
+        {
+          "model": "hist",
+          "weight": 1.0,
+          "mae": 16306.549590572102
+        }
+      ]
+    },
+    "standard": {
+      "fit_rows": 416,
+      "validation_rows": 139,
+      "choice": {
+        "model": "ridge",
+        "weight": 0.5,
+        "mae": 14382.17058011295
+      },
+      "candidates": [
+        {
+          "model": "base",
+          "weight": 0.0,
+          "mae": 14700.522581295843
+        },
+        {
+          "model": "ridge",
+          "weight": 0.5,
+          "mae": 14382.17058011295
+        },
+        {
+          "model": "ridge",
+          "weight": 1.0,
+          "mae": 15181.548470497359
+        },
+        {
+          "model": "gbr",
+          "weight": 0.5,
+          "mae": 14482.49142488045
+        },
+        {
+          "model": "gbr",
+          "weight": 1.0,
+          "mae": 15431.027857954916
+        },
+        {
+          "model": "hist",
+          "weight": 0.5,
+          "mae": 15055.390395724891
+        },
+        {
+          "model": "hist",
+          "weight": 1.0,
+          "mae": 17373.7143301101
+        }
+      ]
+    },
+    "premium": {
+      "fit_rows": 137,
+      "validation_rows": 46,
+      "choice": {
+        "model": "gbr",
+        "weight": 1.0,
+        "mae": 36983.02911540294
+      },
+      "candidates": [
+        {
+          "model": "base",
+          "weight": 0.0,
+          "mae": 42858.70944573943
+        },
+        {
+          "model": "ridge",
+          "weight": 0.5,
+          "mae": 41312.458969185434
+        },
+        {
+          "model": "ridge",
+          "weight": 1.0,
+          "mae": 44149.48301677831
+        },
+        {
+          "model": "gbr",
+          "weight": 0.5,
+          "mae": 39145.029351586825
+        },
+        {
+          "model": "gbr",
+          "weight": 1.0,
+          "mae": 36983.02911540294
+        },
+        {
+          "model": "hist",
+          "weight": 0.5,
+          "mae": 40374.28647532175
+        },
+        {
+          "model": "hist",
+          "weight": 1.0,
+          "mae": 39535.568462968324
+        }
+      ]
+    }
+  },
+  "test": {
+    "all": {
+      "count": 292,
+      "base": {
+        "mae": 19533.940844215816,
+        "rmse": 35550.85741552959,
+        "r2": 0.7828088139726959
+      },
+      "cascade": {
+        "mae": 20319.92357590997,
+        "rmse": 33480.9280377315,
+        "r2": 0.8073641947166876
+      }
+    },
+    "basic": {
+      "count": 108,
+      "base": {
+        "mae": 12643.941666920753,
+        "rmse": 17890.3592983334,
+        "r2": 0.5919437273145371
+      },
+      "cascade": {
+        "mae": 12902.016578456296,
+        "rmse": 17876.330018049357,
+        "r2": 0.5925834563564351
+      }
+    },
+    "standard": {
+      "count": 138,
+      "base": {
+        "mae": 17302.874851800672,
+        "rmse": 23968.34077473288,
+        "r2": 0.7433671626977834
+      },
+      "cascade": {
+        "mae": 17191.995056248634,
+        "rmse": 23802.855687376443,
+        "r2": 0.7468986794130987
+      }
+    },
+    "premium": {
+      "count": 46,
+      "base": {
+        "mae": 42403.658629023565,
+        "rmse": 74484.1226662919,
+        "r2": 0.3805802672196247
+      },
+      "cascade": {
+        "mae": 47119.66469413301,
+        "rmse": 68306.1649593416,
+        "r2": 0.4790723275569476
+      }
+    }
+  },
+  "source": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data",
+  "train_sha256": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41",
+  "model_sha256": "03cf4d2c1da964f4dea7d2b814daa2fc9b9e251628faec92bc807bffb8022531"
+}
